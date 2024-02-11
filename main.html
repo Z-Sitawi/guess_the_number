@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number</title>
+    <link rel="stylesheet" href="../BS/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../BS/css/bootstrap.min.css.map">
+    <link rel="stylesheet" href="start.css">
+    <link rel="stylesheet" href="game.css">
+    <script src="functions.js"></script>
+</head>
+<body id="body">
+    <div class="start d-flex justify-content-center col-10" id="box">
+        <button class="btn p-5 col-4" id="start" onclick="start()">START</button>
+    </div>
+    <div class="container py-1 text-center">
+        <h1 class="Game_name text-warning"><span>G</span>uess <span>T</span>he <span>N</span>umber</h1>
+    </div>
+    <div class="gamebox container py-5 col-6 d-flex flex-column justify-content-center align-items-center">
+        <h4>You have <span>3</span> chances</h4>
+        <input id="input" type="text" autocomplete="off" placeholder="From 1 To 10" minlength="1" maxlength="2"  class="col-6 mb-5 p-3">
+        <button class="btn btn-check col-4" onclick="check()" onmouseleave="changecolor2()" id="btn">Check</button>
+        <h6 class="py-1" id="att">Attempts Left: 3</h6>
+        <h3 class="p-5 my-3" id="label"></h3>
+        <div id="reload"></div>
+    </div>
+</body>
+</html>

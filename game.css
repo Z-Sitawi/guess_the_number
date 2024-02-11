@@ -1,0 +1,59 @@
+.gamebox {
+    max-height: 500px;
+    outline: 2px solid;
+    outline-color: rgb(255, 111, 0);   
+}
+
+.gamebox input {
+    height: 70px;
+    border: 10px solid rgb(255, 111, 0);
+}
+
+.gamebox input[type="text"] {
+    color: rgb(108, 11, 135);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-size: x-large;
+}
+
+.gamebox h4 {
+    color: black;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: x-large;
+}
+
+.gamebox h4 span {
+    text-align: center;
+    color: black;
+    background-color: rgb(255, 111, 0);
+    padding: 5px 10px;
+    padding-left: 11px;
+    border-radius: 50%;
+}
+
+.btn-check {
+    color: white;
+    background-color: rgb(255, 111, 0);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+}
+
+.btn-check:hover {
+    background-color: rgb(249, 211, 183);
+}
+
+#label {
+    background-color: none;
+    border-radius: 5px;
+    font-family: myfont;
+    font-size: large;
+    word-spacing: 5px;
+    letter-spacing: 1.5px;
+}
+
+@font-face {
+    font-family: myfont;
+    src: url('./ProtestStrike-Regular.ttf');
+}
