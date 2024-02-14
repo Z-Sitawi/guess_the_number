@@ -23,6 +23,21 @@ body {
     transition: font-size 0.5s;
 }
 
+@media screen and (max-width: 600px) {
+    .start {
+        height: 500px;
+        padding: 200px 0;
+        position: absolute;
+        top: calc(50vh - 200px);
+        left: calc(50vw - 83.333333% / 2);
+    }
+
+    .start button {
+        font-size: 30px;
+        letter-spacing: 2.5px;
+    }
+}
+
 .start button:hover {
     color: orange;
 }
@@ -44,4 +59,36 @@ body {
 @font-face {
     font-family: myfont;
     src: url('./ProtestStrike-Regular.ttf');
+}
+
+@media screen and (max-width: 600px) {
+    .start {
+        height: 500px;
+        padding: 200px 0;
+        position: absolute;
+        top: calc(50vh - 250px);
+        left: calc(50vw - 83.333333% / 2);
+    }
+
+    .start button {
+        font-size: 30px;
+        letter-spacing: 2.5px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    .start {
+        height: 70%;
+        position: absolute;
+        top: calc(50vh - 35%);
+        left: calc(50vw - 83.333333% / 2);
+    }
+
+    .start button {
+        height: 20%;
+        font-size: 30px;
+        letter-spacing: 2.5px;
+        position: absolute;
+        top: 25%;
+    }
 }

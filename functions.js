@@ -1,6 +1,7 @@
 function start(){
+    playSound(audio_click)
     document.getElementById('start').style.fontSize = '40px';
-    // wait for two seconds befor executong next line
+    // wait befor executong next line
     setTimeout(function() {
         removeChild('body', 'box');
     }, 500);
@@ -51,9 +52,17 @@ function attempts(){
     }
     return num;
 }
+function playAgain() {
+    playSound(audio_click);
+    setTimeout(function() {
+        location.reload();
+    }, 200);
+}
+ 
+/* ============ Random Number Part ===================== */
 var x_number = getRandomNumber(1, 10)
 
-function check(x=x_number) {
+function check(x=5) {
     changecolor()
     var att = attempts();
     var btn = document.getElementById('btn');
@@ -62,9 +71,10 @@ function check(x=x_number) {
     if (val == x){
         document.getElementById('label').textContent = 'You Won';
         document.getElementById('label').style.backgroundColor = 'rgb(77, 250, 130)';
+        playSound(audio_win);
         btn.disabled = true;
         document.getElementById('input').disabled = true;
-        document.getElementById('reload').innerHTML = '<button class="btn btn-warning p-3" onclick="location.reload()"><b>Play Again</b></button>'
+        document.getElementById('reload').innerHTML = '<button class="btn btn-warning p-3" onclick="playAgain()"><b>Play Again</b></button>'
     }
     else{
         console.log(att);
@@ -77,10 +87,42 @@ function check(x=x_number) {
     if (att == 0 && val != x){
         document.getElementById('label').textContent = 'Game Over';
         document.getElementById('label').style.backgroundColor = 'rgb(200, 0, 0, 0.7)';
+        playSound(audio_gover)
         document.getElementById('input').disabled = true;
         document.getElementById('input').value = ' ';
-        document.getElementById('reload').innerHTML = '<button class="btn btn-warning p-3" onclick="location.reload()"><b>Play Again</b></button>'
+        document.getElementById('reload').innerHTML = '<button class="btn btn-warning p-3" onclick="playAgain()"><b>Play Again</b></button>'
         btn.disabled = true;
     }
 
+}
+
+/* ============ Declare Sounds ============ */
+var audio_click = new Audio('./sound_click.wav');
+var audio_gover = new Audio('./gameover.wav');
+var audio_win = new Audio('./winner.wav');
+
+function playSound(sound) {
+    sound.play();
+}
+
+function muteSounds() {
+    var muteButton = document.getElementById('muteButton');
+
+    if (muteButton.style.backgroundColor === 'rgb(187, 236, 187)') {
+        // Mute all audio elements
+        audio_click.muted = true;
+        audio_gover.muted = true;
+        audio_win.muted = true;
+        // Mute more audio elements as needed
+        muteButton.style.backgroundColor = 'rgb(231, 162, 254)';
+        muteButton.style.textDecoration = '3px line-through red';
+    } else {
+        // Unmute all audio elements
+        audio_click.muted = false;
+        audio_gover.muted = false;
+        audio_win.muted = false;
+        // Unmute more audio elements as needed
+        muteButton.style.backgroundColor = 'rgb(187, 236, 187)';
+        muteButton.style.textDecoration = 'none';
+    }
 }
