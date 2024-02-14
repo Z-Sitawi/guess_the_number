@@ -62,7 +62,7 @@ function playAgain() {
 /* ============ Random Number Part ===================== */
 var x_number = getRandomNumber(1, 10)
 
-function check(x=5) {
+function check(x=x_number) {
     changecolor()
     var att = attempts();
     var btn = document.getElementById('btn');
