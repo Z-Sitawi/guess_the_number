@@ -1,11 +1,14 @@
 function start(){
-    playSound(audio_click)
-    document.getElementById('start').style.fontSize = '40px';
-    // wait befor executong next line
+    playSound(audio_click);
+    if (window.innerWidth > 600) {
+        document.getElementById('start').style.fontSize = '40px';
+    }
+    // wait before executing the next line
     setTimeout(function() {
         removeChild('body', 'box');
     }, 500);
 }
+
 
 function removeChild(pid, cid) {
     var parentDiv = document.getElementById(pid);
