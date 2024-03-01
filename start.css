@@ -95,5 +95,6 @@ body {
         letter-spacing: 2.5px;
         position: absolute;
         top: 25%;
+        border-radius: 5px;
     }
 }
